@@ -31,6 +31,10 @@ def reply(token, text):
 def health():
     return {"status": "ok"}
 
+@app.get("/callback")
+def callback_get():
+    return {"status": "ok"}
+
 @app.post("/callback")
 async def callback(request: Request):
     signature = request.headers.get("X-Line-Signature", "")
